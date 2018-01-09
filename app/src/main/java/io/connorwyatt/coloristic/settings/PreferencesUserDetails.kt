@@ -29,8 +29,7 @@ class PreferencesUserDetails(private val preferences: SharedPreferences) : UserD
 
     fun create(context: Context): PreferencesUserDetails
     {
-      val preferences = context.getSharedPreferences("io.connorwyatt.coloristic",
-          Context.MODE_PRIVATE)
+      val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
       return PreferencesUserDetails(preferences)
     }

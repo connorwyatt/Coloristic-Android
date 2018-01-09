@@ -3,6 +3,7 @@ package io.connorwyatt.coloristic.onboarding
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import io.connorwyatt.coloristic.mocks.UserDetailsMock
+import io.connorwyatt.coloristic.ui.onboarding.InitialDetailsPresenter
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -15,7 +16,8 @@ class InitialDetailsPresenterTests
   {
     val userDetails: UserDetailsMock = mock()
 
-    val presenter = InitialDetailsPresenter(userDetails, { })
+    val presenter = InitialDetailsPresenter(userDetails,
+        { })
 
     val valid = presenter.valid
 
@@ -27,7 +29,8 @@ class InitialDetailsPresenterTests
   {
     val userDetails: UserDetailsMock = mock()
 
-    val presenter = InitialDetailsPresenter(userDetails, { })
+    val presenter = InitialDetailsPresenter(userDetails,
+        { })
 
     presenter.changeName("A")
 
@@ -43,7 +46,8 @@ class InitialDetailsPresenterTests
   {
     val userDetails: UserDetailsMock = mock()
 
-    val presenter = InitialDetailsPresenter(userDetails, { })
+    val presenter = InitialDetailsPresenter(userDetails,
+        { })
 
     presenter.changeName("Connor")
 
@@ -59,7 +63,8 @@ class InitialDetailsPresenterTests
 
     val formCompleteMock: () -> Unit = mock()
 
-    val presenter = InitialDetailsPresenter(userDetails, formCompleteMock)
+    val presenter = InitialDetailsPresenter(userDetails,
+        formCompleteMock)
 
     presenter.changeName("Connor")
 
