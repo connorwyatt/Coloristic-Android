@@ -1,4 +1,4 @@
-package io.connorwyatt.coloristic.onboarding
+package io.connorwyatt.coloristic.ui.onboarding
 
 import android.databinding.ObservableBoolean
 import io.connorwyatt.coloristic.settings.UserDetails

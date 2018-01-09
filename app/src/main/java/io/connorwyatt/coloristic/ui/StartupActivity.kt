@@ -1,11 +1,13 @@
-package io.connorwyatt.coloristic
+package io.connorwyatt.coloristic.ui
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
-import io.connorwyatt.coloristic.onboarding.InitialDetailsActivity
+import io.connorwyatt.coloristic.R.xml
 import io.connorwyatt.coloristic.settings.PreferencesUserDetails
+import io.connorwyatt.coloristic.ui.onboarding.InitialDetailsActivity
 
 class StartupActivity : AppCompatActivity()
 {
@@ -17,13 +19,9 @@ class StartupActivity : AppCompatActivity()
     val userDetails = PreferencesUserDetails.create(this)
 
     if (userDetails.isComplete())
-    {
       navigateToMainActivity()
-    }
     else
-    {
       navigateToInitialDetailsActivity()
-    }
   }
 
   private fun navigateToMainActivity()

@@ -2,24 +2,23 @@ package io.connorwyatt.coloristic.settings
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.preference.PreferenceManager
+import io.connorwyatt.coloristic.R
 
-class PreferencesUserDetails(private val preferences: SharedPreferences) : UserDetails
+class PreferencesUserDetails(
+    private val context: Context,
+    private val preferences: SharedPreferences) : UserDetails
 {
 
-  private object keys
-  {
-    val NAME = "onboarding.NAME"
-  }
+  private val nameKey by lazy { context.getString(R.string.preference_name_key) }
 
   override var name: String?
-    get() = preferences.getString(keys.NAME, null)
+    get() = preferences.getString(nameKey, null)
     set(value)
     {
-      val editablePreferences = preferences.edit()
-
-      editablePreferences.putString(keys.NAME, value)
-
-      editablePreferences.apply()
+      preferences.edit()
+          .apply { putString(nameKey, value) }
+          .apply()
     }
 
   override fun isComplete() = name != null
@@ -31,7 +30,7 @@ class PreferencesUserDetails(private val preferences: SharedPreferences) : UserD
     {
       val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-      return PreferencesUserDetails(preferences)
+      return PreferencesUserDetails(context, preferences)
     }
 
   }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="applicationMaxWidth">400dp</dimen>
+    <dimen name="standardSpacing">16dp</dimen>
+    <dimen name="largeSpacing">32dp</dimen>
+</resources>

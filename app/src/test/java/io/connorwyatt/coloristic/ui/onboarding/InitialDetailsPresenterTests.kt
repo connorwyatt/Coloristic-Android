@@ -1,9 +1,8 @@
-package io.connorwyatt.coloristic.onboarding
+package io.connorwyatt.coloristic.ui.onboarding
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import io.connorwyatt.coloristic.mocks.UserDetailsMock
-import io.connorwyatt.coloristic.ui.onboarding.InitialDetailsPresenter
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

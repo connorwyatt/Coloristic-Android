@@ -7,29 +7,29 @@
 
         <variable
             name="presenter"
-            type="io.connorwyatt.coloristic.onboarding.InitialDetailsPresenter" />
+            type="io.connorwyatt.coloristic.ui.onboarding.InitialDetailsPresenter" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/app_background"
-        tools:context=".onboarding.InitialDetailsActivity">
+        tools:context="io.connorwyatt.coloristic.ui.onboarding.InitialDetailsActivity">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/standardSpacing"
+            android:layout_marginEnd="@dimen/standardSpacing"
+            android:layout_marginStart="@dimen/standardSpacing"
+            android:layout_marginTop="@dimen/standardSpacing"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.4"
-            app:layout_constraintWidth_max="400dp">
+            app:layout_constraintWidth_max="@dimen/applicationMaxWidth">
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,26 +39,26 @@
                 android:text="@string/name_prompt"
                 android:textAlignment="center"
                 android:textColor="@android:color/primary_text_dark"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
             <EditText
                 android:id="@+id/nameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/standardSpacing"
                 android:fontFamily="@font/comfortaa_bold"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:onTextChanged="@{(text, start, before, count) -> presenter.changeName(text)}"
                 android:textAlignment="center"
                 android:textColor="@android:color/primary_text_dark"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
             <Button
                 android:id="@+id/continueButton"
                 style="@style/ColoredButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/largeSpacing"
                 android:enabled="@{presenter.valid}"
                 android:onClick="@{(view) -> presenter.submit()}"
                 android:text="@string/continue_button" />

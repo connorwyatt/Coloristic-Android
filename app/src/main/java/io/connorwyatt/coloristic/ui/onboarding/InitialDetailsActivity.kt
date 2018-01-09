@@ -1,14 +1,14 @@
-package io.connorwyatt.coloristic.onboarding
+package io.connorwyatt.coloristic.ui.onboarding
 
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import io.connorwyatt.coloristic.MainActivity
 import io.connorwyatt.coloristic.R
 import io.connorwyatt.coloristic.databinding.ActivityInitialDetailsBinding
 import io.connorwyatt.coloristic.settings.PreferencesUserDetails
+import io.connorwyatt.coloristic.ui.MainActivity
 
 class InitialDetailsActivity : AppCompatActivity()
 {
@@ -17,12 +17,12 @@ class InitialDetailsActivity : AppCompatActivity()
   {
     super.onCreate(savedInstanceState)
 
-    val binding: ActivityInitialDetailsBinding = DataBindingUtil.setContentView(this,
-        R.layout.activity_initial_details)
+    val binding: ActivityInitialDetailsBinding
+        = DataBindingUtil.setContentView(this, R.layout.activity_initial_details)
 
     val userDetails = PreferencesUserDetails.create(this)
 
-    val presenter = InitialDetailsPresenter(userDetails, { formComplete() })
+    val presenter = InitialDetailsPresenter(userDetails, ::formComplete)
 
     binding.presenter = presenter
   }

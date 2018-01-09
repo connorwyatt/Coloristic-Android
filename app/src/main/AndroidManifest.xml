@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splashscreen.SplashScreenActivity"
+            android:name=".ui.splashscreen.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,18 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name=".StartupActivity"
+            android:name=".ui.StartupActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name=".onboarding.InitialDetailsActivity"
+            android:name=".ui.onboarding.InitialDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.game.IntroductionActivity" />
+        <activity android:name=".ui.settings.SettingsActivity" />
+
     </application>
 
 </manifest>

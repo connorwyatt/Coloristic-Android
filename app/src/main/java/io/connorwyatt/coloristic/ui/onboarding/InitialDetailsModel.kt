@@ -1,4 +1,4 @@
-package io.connorwyatt.coloristic.onboarding
+package io.connorwyatt.coloristic.ui.onboarding
 
 data class InitialDetailsModel(val name: String?)
 {
