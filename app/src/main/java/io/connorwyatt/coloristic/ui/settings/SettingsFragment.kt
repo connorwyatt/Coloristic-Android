@@ -13,4 +13,5 @@ class SettingsFragment : PreferenceFragment()
 
     addPreferencesFromResource(R.xml.preferences)
   }
+
 }
